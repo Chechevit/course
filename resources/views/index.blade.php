@@ -50,6 +50,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="auth">Авторизация</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('category') }}">Категории</a>
+                        </li>
                     </ul>
                 </div>
             </div>

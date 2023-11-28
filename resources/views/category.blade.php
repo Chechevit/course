@@ -4,23 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Регистрация</title>
+    <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-    <style>
-        a>img {
-            width: 25px;
-        }
-    </style>
 </head>
+
+<style>
+    .hero {
+        height: 75vh;
+        width: 100%;
+        overflow: hidden;
+        background-image: url('storage/img/1673746.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 20%;
+    }
+</style>
 
 <body>
     <!-- навигация -->
-
     <div class="header">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
@@ -31,43 +36,35 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/#about">О нас</a>
+                            <a class="nav-link active" aria-current="page" href="#about">О нас</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/#courses">Курсы</a>
+                            <a class="nav-link" href="#courses">Курсы</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/#enroll">Записаться</a>
+                            <a class="nav-link" href="#enroll">Записаться</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="reg">Регистрация</a>
+                            <a class="nav-link" href="/reg">Регистрация</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="auth">Авторизация</a>
+                            <a class="nav-link" href="/auth">Авторизация</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Категории</a>
+                            <a class="nav-link" href="{{ route('category') }}">Категории</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
+    </div>  
+    <div class="container">
+        @foreach ($categories as $item)
+            <a href="/course/{{ $item->id }}">{{ $item->title }}</a>
+        @endforeach
     </div>
-    <form action="reg" method="post">
-        @csrf
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" name="password">
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Name</label>
-            <input type="name" class="form-control" id="exampleInputPassword1" name="name">
-        </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+</html>

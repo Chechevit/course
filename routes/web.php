@@ -28,6 +28,6 @@ Route::post("auth", [UserController::class, "auth"]);
 
 Route::get('auth',[UserController::class, "index_auth"]);
 
+Route::get('/categories', [CategoryController::class, 'index'])->name('category');
 
-
-
+Route::get('/course/{id_category}', [CategoryController::class, 'courses']);

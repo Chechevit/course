@@ -16,4 +16,13 @@ class CategoryController extends Controller
         ]);
         return redirect("/admin");
     }
+
+    public function index(Category $category){
+        return view('category', ['categories'=>$category->all()]);
+    }
+
+    public function courses($id_category){
+        $category = Category::find($id_category);
+        return view('course', ['courses'=>$category->course]);
+    }
 }
