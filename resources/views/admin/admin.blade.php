@@ -106,11 +106,11 @@
                     @csrf
                     <div class="mb-3">
                         <label for="title" class="form-label">Название курса</label>
-                        <input type="text" class="form-control" id="title" name="title">
+                        <input type="text" class="form-control" id="title" name="title" required>
                     </div>
                     <div class="mb-3">
                         <label for="description" class="form-label">Описание курса</label>
-                        <textarea class="form-control" id="description" rows="2" name="description"></textarea>
+                        <textarea class="form-control" id="description" rows="2" name="description" required></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="cost" class="form-label">Стоимость курса</label>

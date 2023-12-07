@@ -7,6 +7,14 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+    public function validate_cat(Request $request){
+        $request-> validate([
+            "title"=>"required|unique:categories",
+        ],[
+            "title.reqiured"=>"Обязательно нужно название категории",
+        ]);
+    }
+    
     public function createCategory(Request $request)
     {
         $createCategory = $request->all();
